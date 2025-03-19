@@ -40,7 +40,7 @@ app.get("/product/:id", (req: Request, res: Response) => {
     console.log(req.params.id);
     
     const product = products.find((product) => {
-        return products.id = Number(req.params.id)
+        return product.id = Number(req.params.id)
     });
 
     if(!product){
