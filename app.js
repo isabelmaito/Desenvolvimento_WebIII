@@ -1,8 +1,11 @@
 //Importação da biblioteca express
 const express = require('express');
 
-//Criação da aplicação 
+//Criação da aplicação "criação": unknow word.
 const app = express();
+
+//Configura aplicação para receber json no body das requisições
+app.use(express.json());
 
 //Array de produtos
 const products =[
@@ -47,6 +50,12 @@ app.get("/product", (req, res) => {
     res.status(200).json(products);
 });
 
+app.post("/product", (req, res) => {
+    const product = req.body;
+    products.push(product);
+
+    res.status(201).send();
+})
 
 //Inicia aplicação na porta 3000
 app.listen(3000, () => {
