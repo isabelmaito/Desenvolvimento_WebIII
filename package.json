@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./app.js"
+    "dev": "ts-node-dev --respawn --transpile-only ./app.ts"
   },
   "keywords": [],
   "author": "",

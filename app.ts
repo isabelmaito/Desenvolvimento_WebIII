@@ -1,3 +1,5 @@
+import { Request, Response } from "express";
+
 //Importação da biblioteca express
 const express = require('express');
 
@@ -11,7 +13,7 @@ app.use(express.json());
 const products =[
     {
         id: 1,
-        name: "Feijão",
+        name: "Feijão Carioca",
         brand: "Broto Legal",
         barCode: "98327279823749327492732",
         supplier: "Rede de Distribuição Ltda",
@@ -34,27 +36,34 @@ const products =[
 ]
 
 //Define método Http Get que responde no path /product/:id
-app.get("/product/:id", (req, res) => {
+app.get("/product/:id", (req: Request, res: Response) => {
     console.log(req.params.id);
     
     const product = products.find((product) => {
         return products.id = Number(req.params.id)
-    })
+    });
 
-    //Responde requisição com "Hello World!"
+    if(!product){
+        res.status(404).send();
+        return;
+    }    
     res.status(200).json(product);
 });
 
 //Rota que retorna uma lista de produtos no path /product/:id
-app.get("/product", (req, res) => {
+app.get("/product", (req: Request, res: Response) => {
     res.status(200).json(products);
 });
 
-app.post("/product", (req, res) => {
+app.post("/product", (req: Request, res: Response) => {
     const product = req.body;
     products.push(product);
 
     res.status(201).send();
+})
+
+app.delete("/product/:id", (req: Request, res: Response) => {
+
 })
 
 //Inicia aplicação na porta 3000
