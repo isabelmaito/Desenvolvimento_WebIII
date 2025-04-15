@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./app.ts",
+    "migration:create": "npx sequelize-cli migration:generate --name"
   },
   "keywords": [],
   "author": "",
