@@ -63,6 +63,8 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
+    await queryInterface.dropTable('produto');
+    
     /**
      * Add reverting commands here.
      *
