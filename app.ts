@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import  ProductRoutes  from "./src/routes/product.routes";
+import BrandRoutes from "./src/routes/brand.routes";
+
 
 //Importação da biblioteca express
 const express = require('express');
@@ -11,7 +13,8 @@ const app = express();
 app.use(express.json());
 
 //routes
-app.use('/product', ProductRoutes)
+app.use('/product', ProductRoutes);
+app.use('/brand', BrandRoutes);
 
 
 //Inicia aplicação na porta 3000
