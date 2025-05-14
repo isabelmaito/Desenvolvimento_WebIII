@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.10",
     "@types/sequelize": "^4.28.20",
     "sequelize-cli": "^6.6.2",
