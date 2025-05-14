@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import  ProductRoutes  from "./src/routes/product.routes";
 import BrandRoutes from "./src/routes/brand.routes";
+import {authRouter} from "./src/routes/auth.routes";
 
 
 //Importação da biblioteca express
@@ -15,6 +16,7 @@ app.use(express.json());
 //routes
 app.use('/product', ProductRoutes);
 app.use('/brand', BrandRoutes);
+app.use('/auth', authRouter);
 
 
 //Inicia aplicação na porta 3000
