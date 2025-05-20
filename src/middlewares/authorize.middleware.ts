@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken"
 import { NextFunction, Request, Response } from "express";
 
+import dotenv from "dotenv";
+dotenv.config()
+
 export const AuthorizeMiddleware = (
     req: Request, 
     rest: Response, 
