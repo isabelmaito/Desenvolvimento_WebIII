@@ -7,7 +7,7 @@ import { AuthorizeMiddleware } from '../middlewares/authorize.middleware';
 
 const router = express.Router(); 
 
-router.use(AuthorizeMiddleware)
+router.use(AuthorizeMiddleware);
 
 const logger = (req: Request, res: Response, next: NextFunction) => {
     console.log("LOGGED");
