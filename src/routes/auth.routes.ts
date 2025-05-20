@@ -1,6 +1,10 @@
 import express, {Request, Response} from 'express';
 import jwt from "jsonwebtoken"
 
+import dotenv from "dotenv";
+dotenv.config()
+
+
 export const authRouter = express.Router();
 
 authRouter.post("/", (req: Request, res: Response) => {
