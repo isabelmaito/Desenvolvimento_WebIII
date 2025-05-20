@@ -10,7 +10,7 @@ export const AuthorizeMiddleware = (
     next: NextFunction
 ) => {
     const { authorization } = req.headers;
-    const secret = process.env.AUTH_SECRET || "";
+    const secret = process.env.AUTH_SECRET || "blublublu";
 
     jwt.verify(authorization || "", secret, (err) => {
         if (err) {
